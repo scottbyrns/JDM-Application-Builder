@@ -1,0 +1,18 @@
+{
+	
+	"projects": [
+		
+		{
+			"groupId": "com.scottbyrns.jdm",
+			"projectId": "PackageRepository",
+			"version": "1.0.0-SNAPSHOT"
+		},
+		{
+			"groupId": "com.scottbyrns.widgets",
+			"projectId": "WidgetBuilder",
+			"version": "1.0.0-SNAPSHOT"
+		}
+		
+	]
+	
+}

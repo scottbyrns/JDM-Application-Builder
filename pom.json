@@ -1,0 +1,106 @@
+{
+
+	
+	"name": "JDM Applicaiton Builder",
+	"description": "An application for building JDM (Javascript Dependency Managed) applications.",
+	
+	"tags": [
+
+	],
+	
+	"groupId": "com.scottbyrns.jdm",
+	"projectId": "ApplicationBuilder",
+	"version": "1.0.0-SNAPSHOT",
+	
+	"packaging": "none",
+	
+	"url": "https://github.com/scottbyrns/Javascript-Dependency-Manager",
+	
+	"scm": {
+		"url": "https://github.com/scottbyrns/Javascript-Dependency-Manager",
+		"connection": "git@github.com:scottbyrns/Javascript-Dependency-Manager.git"
+	},
+	
+	"repositories": [
+		{
+			"name": "local",
+			"url": "http://localhost:3000/"
+		}
+	],
+	
+	"dependencies": [
+		{
+		    "groupId": "com.scottbyrns.widgets.HTML5.io",
+		    "artifactId": "SocketIOConnector",
+		    "version": "1.0.0-SNAPSHOT"
+		},
+		{
+			"groupId": "com.scottbyrns.Elements",
+			"artifactId": "List",
+			"version": "1.0.0-SNAPSHOT"
+		},
+		{
+			"groupId": "com.scottbyrns.Elements",
+			"artifactId": "Table",
+			"version": "1.0.0-SNAPSHOT"
+		},
+		{
+			"groupId": "com.github.ajaxorg",
+			"artifactId": "AceBuilds",
+			"version": "1.0.0-SNAPSHOT"
+		},
+		{
+			"groupId": "com.scottbyrns.HTML5.IO",
+			"artifactId": "File",
+			"version": "1.0.1-SNAPSHOT"
+		},
+		{
+		    "groupId": "com.scottbyrns",
+		    "artifactId": "LiveWidgetsVisualizer",
+		    "version": "1.0.0-SNAPSHOT"
+		},
+		{
+		    "groupId": "com.scottbyrns.widgets.jdm.repo",
+		    "artifactId": "DataSource",
+		    "version": "1.0.0-LOCALHOST"
+		},
+		{
+		    "groupId": "com.scottbyrns.widgets.events",
+		    "artifactId": "EventTrigger",
+		    "version": "1.0.0-RELEASE"
+		},
+		{
+		    "groupId": "com.scottbyrns.widgets.HTML5.IO.File",
+		    "artifactId": "FileDropZone",
+		    "version": "1.0.0-SNAPSHOT"
+		},
+		{
+		    "groupId": "com.scottbyrns.widgets.utilities.Editor",
+		    "artifactId": "CodeEditor",
+		    "version": "1.0.0-SNAPSHOT"
+		},
+		{
+		    "groupId": "com.scottbyrns.widgets.events",
+		    "artifactId": "DragData",
+		    "version": "1.0.0-SNAPSHOT"
+		}
+
+	],
+	
+	"sources": [
+		"src/widget-builder.js",
+		"src/view-controller.js"
+	],
+	
+	"configuration": {
+		
+	},
+	
+	"build": {
+		
+	}
+	
+	
+	
+}
+

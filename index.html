@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Javascript Dependency Manager Project Builder</title>
+
+    <!-- Requirements
+
+		A user can browse a list of web applicaitons
+
+		A user can create a new web application project
+		A user can add dependencies to a project.
+		A user can add sources to a project.
+		
+		
+		A user can export a project
+		A user can delete a project
+		A user can open a project in Collaborate IDE
+		
+
+		-->
+		
+	<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="src/app.css">
+
+
+</head>
+
+<body>
+	<dataset data-widget="socket-io-connector" data-host="https://localhost" data-port="3000" data-secure="true"></dataset>
+	
+	<div id="wrap">
+		
+		
+
+  	  <aside>
+		<!-- 
+			
+			HEADER
+			
+		-->
+  	  	<header>
+
+			<div class="logo" id="passive-control">
+				<div class="dot"></div>
+			</div>
+
+  	  		<h1 id="title">
+  				JDM Project Manager
+  	  		</h1>
+
+  	  	</header>
+		
+		
+		<!-- 
+			
+			NAVIGATION
+			
+		-->
+		<nav>
+			<div class="spacer"></div>
+			
+			
+			
+			
+			
+			<ul class="menu" id="main-menu">
+
+				<li data-widget="event-trigger" data-group="views" data-event="click" data-message="show-view" data-channel="project-builder">
+					
+					<div class="add-icon rounded light"><p></p></div>
+					
+					<span>
+						Create New Project
+					</span>
+					
+				</li>
+				
+				<li data-widget="event-trigger" data-group="repository-control" data-event="click" data-message="create-package">
+					
+					<div class="upload-icon rounded light"><p></p></div>
+					
+					<span>
+						Upload Existing Project
+					</span>
+					
+				</li>
+				
+			</ul>
+			
+			
+			
+
+
+			<ul class="menu" id="package-menu">
+				
+				<li data-widget="event-trigger" data-group="repository-control" data-event="click" data-message="edit-package">
+					
+					<div class="add-icon rounded light"><p></p></div>
+					
+					<span>
+						Edit Application
+					</span>
+					
+				</li>
+				
+				<li data-widget="event-trigger" data-group="repository-control" data-event="click" data-message="remove-package" data-channel="remove-package">
+					
+					<div class="delete-icon rounded light"><p></p></div>
+					
+					<span>
+						Remove Application
+					</span>
+					
+				</li>
+				
+			</ul>
+			
+			
+			
+			
+
+		</nav>
+
+
+		
+  	  </aside>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- 
+		
+			WORKSPACE
+		
+		-->
+	  <article id="workspace" data-widget="view-controller" data-group="views" data-default="project-list">
+		  
+		  
+		  
+		  
+		  
+		  
+  	  	<section data-view="project-list" id="modules">
+
+			<div class="spacer">
+				
+				<label>
+						
+					Search Repository
+						
+				</label>
+				
+				<input id="search" type="search" />
+				
+			</div>
+
+  	  	</section>
+		
+		<section data-view="project-overview" id="artifact-viewer">
+
+			<div data-widget="artifact-viewer" data-group="artifact|repository-control|repo-data-source" >
+
+				Artifact Viewer
+
+			</div>
+
+		</section>
+		
+		  
+		  <section data-view="project-builder" id="jdm-project-builder" data-widget="jdm-project-builder" data-group="jdm-project-builder">
+			  
+				<div class="project-overview">
+
+					<div class="artifact-icon" data-widget="file-drop-zone" data-group="jdm-package-builder" data-channel="icon-dropzone" id="artifact-icon">
+						<!-- <div class="add-icon rounded" data-widget="event-trigger" data-group="repository-control" data-event="click" data-message="add-package">
+							<p></p>
+						</div> -->
+					</div>
+
+					
+					<h3>
+						<input type="text" name="project-name"
+							default="Project Name...."
+							data-widget="event-trigger"
+							data-group="jdm-project-builder"
+							data-event="blur"
+							data-message="project-name"  />
+					</h3>
+					
+					<p>
+						<textarea name="project-description"
+								data-widget="event-trigger"
+								data-group="jdm-project-builder"
+								data-event="blur"
+								data-message="project-description"
+								default="Description..."></textarea>
+					</p>
+
+					<span data-widget="event-trigger" data-group="jdm-project-builder" data-event="click" data-message="save">
+						Save
+					</span>
+
+				</div>
+			  
+				  
+				  <form>
+					  
+					  
+  					<table>
+  					<tr>
+						<th>Group ID</th>
+						<td>
+							<input type="text" name="group-id"
+							data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="group-id" />
+						</td>
+						<td rowspan="7" class="right-bucket">
+			  				<div class="dropzone">
+			  					<div data-widget="file-drop-zone" data-group="jdm-package-builder" id="source-dropzone">
+									Source File Dropzone
+			  					</div>
+			  				</div>
+						</td>
+					</tr>
+  					<tr>
+						<th>Project ID</th>
+						<td>
+							<input type="text" name="artifact-id"
+							data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="project-id" />
+						</td>
+					</tr>
+  					<tr>
+						<th>Version</th>
+						<td>
+							<input type="text" name="artifact-version"
+							data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="project-version" />
+						</td>
+					</tr>
+  					<tr>
+						<th>Author</th>
+						<td>
+							<input type="text" name="author-name"
+							data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="author-name" />
+						</td>
+					</tr>
+  					<tr>
+						<th>Homepage URL</th>
+						<td>
+							<input type="text" name="homepage-url"
+							data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="homepage-url" />
+						</td>
+					</tr>
+  					<tr>
+						<th>Version Control</th>
+						<td>
+							<input type="text" name="version-control"
+							data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="version-control" />
+						</td>
+					</tr>
+  					<tr>
+						<th>Issue Tracker</th>
+						<td>
+							<input type="text" name="issue-tracker-url"
+							 data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="issue-tracker-url" />
+						</td>
+					</tr>
+  					</table>
+					  
+				  </form>
+			  
+
+				
+				
+				<div class="dependencies" id="dependencies-dropzone">
+					 <!-- data-widget="event-trigger" data-group="jdm-package-builder" data-event="dragover" data-message="drag-over" -->
+					<h3 class="dependencies">Dependencies</h3>
+					<table class="dependencies" id="dependency-list">
+						
+						<tr>
+							<th>Group</th><th>Artifact</th><th>Version</th>
+						</tr>
+
+
+					
+					</table>
+					
+					
+				</div>
+				
+				<div class="dependencies">
+					
+					<h3 class="dependencies">Sources</h3>
+					<table class="dependencies" id="add-sources">
+						
+						<tr>
+							<th>Sources</th>
+						</tr>
+
+					</table>
+					
+					
+				</div>
+			  
+		  </section>
+		
+		  
+	  </article>
+
+	  
+	</div>
+	
+
+
+    
+
+		
+		
+	    <script src='https://localhost:3000/DependencyManager.js'></script>
+		
+		
+		<dataset data-widget="repo-data-source" data-group="repo-data-source"></dataset>	
+		<intput type="hidden" data-widget="live-widgets-visualizer" data-group="visualizer" />
+</body>
+
+</html>
