@@ -1,0 +1,27 @@
+{
+	
+	"on-deck": [
+		
+		"implement create project form",
+		"implement client project save",	
+		"delete project"
+		
+	],
+	
+	
+	"needed-for-release": [
+		
+		
+		
+	],
+	
+	
+	"todo": [
+		
+		"update project",
+		"extract form handling to a library/widget"
+		
+	]
+	
+	
+}

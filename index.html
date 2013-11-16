@@ -17,7 +17,6 @@
 		A user can delete a project
 		A user can open a project in Collaborate IDE
 		
-
 		-->
 		
 	<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
@@ -27,7 +26,7 @@
 </head>
 
 <body>
-	<dataset data-widget="socket-io-connector" data-host="https://localhost" data-port="3000" data-secure="true"></dataset>
+
 	
 	<div id="wrap">
 		
@@ -58,10 +57,8 @@
 			
 		-->
 		<nav>
+			
 			<div class="spacer"></div>
-			
-			
-			
 			
 			
 			<ul class="menu" id="main-menu">
@@ -150,7 +147,7 @@
 			WORKSPACE
 		
 		-->
-	  <article id="workspace" data-widget="view-controller" data-group="views" data-default="project-list">
+	  <article id="workspace" data-widget="tab-view-controller" data-group="views" data-default="project-list">
 		  
 		  
 		  
@@ -186,9 +183,11 @@
 		  
 		  <section data-view="project-builder" id="jdm-project-builder" data-widget="jdm-project-builder" data-group="jdm-project-builder">
 			  
+			  <datalist data-widget="create-project" data-inlets="jdm-project-builder"></datalist>
+			  
 				<div class="project-overview">
 
-					<div class="artifact-icon" data-widget="file-drop-zone" data-group="jdm-package-builder" data-channel="icon-dropzone" id="artifact-icon">
+					<div class="artifact-icon" data-widget="file-drop-zone" data-group="jdm-project-builder" data-channel="icon-dropzone" id="artifact-icon">
 						<!-- <div class="add-icon rounded" data-widget="event-trigger" data-group="repository-control" data-event="click" data-message="add-package">
 							<p></p>
 						</div> -->
@@ -196,21 +195,25 @@
 
 					
 					<h3>
+						
 						<input type="text" name="project-name"
 							default="Project Name...."
 							data-widget="event-trigger"
 							data-group="jdm-project-builder"
 							data-event="blur"
 							data-message="project-name"  />
+							
 					</h3>
 					
 					<p>
+						
 						<textarea name="project-description"
 								data-widget="event-trigger"
 								data-group="jdm-project-builder"
 								data-event="blur"
 								data-message="project-description"
 								default="Description..."></textarea>
+								
 					</p>
 
 					<span data-widget="event-trigger" data-group="jdm-project-builder" data-event="click" data-message="save">
@@ -220,69 +223,135 @@
 				</div>
 			  
 				  
-				  <form>
-					  
-					  
-  					<table>
-  					<tr>
-						<th>Group ID</th>
-						<td>
-							<input type="text" name="group-id"
-							data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="group-id" />
-						</td>
-						<td rowspan="7" class="right-bucket">
-			  				<div class="dropzone">
-			  					<div data-widget="file-drop-zone" data-group="jdm-package-builder" id="source-dropzone">
-									Source File Dropzone
-			  					</div>
-			  				</div>
-						</td>
-					</tr>
-  					<tr>
-						<th>Project ID</th>
-						<td>
-							<input type="text" name="artifact-id"
-							data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="project-id" />
-						</td>
-					</tr>
-  					<tr>
-						<th>Version</th>
-						<td>
-							<input type="text" name="artifact-version"
-							data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="project-version" />
-						</td>
-					</tr>
-  					<tr>
-						<th>Author</th>
-						<td>
-							<input type="text" name="author-name"
-							data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="author-name" />
-						</td>
-					</tr>
-  					<tr>
-						<th>Homepage URL</th>
-						<td>
-							<input type="text" name="homepage-url"
-							data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="homepage-url" />
-						</td>
-					</tr>
-  					<tr>
-						<th>Version Control</th>
-						<td>
-							<input type="text" name="version-control"
-							data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="version-control" />
-						</td>
-					</tr>
-  					<tr>
-						<th>Issue Tracker</th>
-						<td>
-							<input type="text" name="issue-tracker-url"
-							 data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="issue-tracker-url" />
-						</td>
-					</tr>
-  					</table>
-					  
-				  </form>
+				<form>
+  
+  
+					<table>
+
+						<tr>
+							<th>Group ID</th>
+							<td>
+								<input type="text" name="group-id"
+								data-widget="event-trigger" data-group="jdm-package-builder" data-event="blur" data-message="group-id" />
+							</td>
+							
+							<td rowspan="8" class="right-bucket">
+								
+								<div class="dropzone">
+									
+									<div data-widget="file-drop-zone" data-group="jdm-project-builder" id="source-dropzone">
+										
+										Source File Dropzone
+										
+									</div>
+									
+								</div>
+								
+							</td>
+							
+						</tr>
+				
+						<tr>
+							<th>Project ID</th>
+							<td>
+
+								<input type="text"
+									   name="project-id"
+									   data-widget="form-input-element"
+									   data-group="jdm-package-builder"
+									   data-event="blur"
+									   data-message="project-id" />
+
+							</td>
+						</tr>
+				
+						<tr>
+							<th>Working Directory</th>
+							<td>
+
+								<input type="text"
+									   name="working-directory"
+									   data-widget="form-input-element"
+									   data-group="jdm-package-builder"
+									   data-event="blur"
+									   data-message="working-directory" />
+
+							</td>
+						</tr>
+
+						<tr>
+							<th>Version</th>
+							<td>
+
+								<input type="text"
+									   name="artifact-version"
+									   data-widget="form-input-element"
+									   data-group="jdm-package-builder"
+									   data-event="blur"
+									   data-message="artifact-version" />
+
+							</td>
+						</tr>
+				
+						<tr>
+							<th>Author</th>
+							<td>
+
+								<input type="text"
+									   name="author-name"
+									   data-widget="form-input-element"
+									   data-group="jdm-package-builder"
+									   data-event="blur"
+									   data-message="homepage-url" />
+
+							</td>
+						</tr>
+				
+						<tr>
+							<th>Homepage URL</th>
+							<td>
+								
+								<input type="text"
+									   name="homepage-url"
+									   data-widget="form-input-element"
+									   data-group="jdm-package-builder"
+									   data-event="blur"
+									   data-message="homepage-url" />
+									   
+							</td>
+						</tr>
+				
+						<tr>
+							<th>Version Control</th>
+							<td>
+								
+								<input type="text"
+									   name="version-control"
+									   data-widget="form-input-element"
+									   data-group="jdm-package-builder"
+									   data-event="blur"
+									   data-message="version-control" />
+									   
+							</td>
+						</tr>
+				
+						<tr>
+							<th>Issue Tracker</th>
+							<td>
+								
+								<input type="text"
+									   name="issue-tracker-url"
+									   data-widget="form-input-element"
+									   data-group="jdm-package-builder"
+									   data-event="blur"
+									   data-message="homepage-url" />
+									   
+							</td>
+						</tr>
+				
+					</table>
+  
+				</form>
 			  
 
 				
@@ -316,6 +385,63 @@
 					
 					
 				</div>
+				
+				
+				<form>
+  
+  
+					<table>
+						<tr>
+							<th>Purpose</th>
+							<td>
+								<textarea></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th>Scope</th>
+							<td>
+								<textarea></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th>Objectives</th>
+							<td>
+								<textarea></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th>Assumptions</th>
+							<td>
+								<textarea></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th>Constraints</th>
+							<td>
+								<textarea></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th>Risks</th>
+							<td>
+								<textarea></textarea>
+							</td>
+						</tr>
+					</table>
+					
+					<div>
+						<h6>Copyright / License</h6>
+						<select>
+							<option>Apache 2.0</option>
+							<option>MIT</option>
+							<option>Public Domain</option>
+							<option>Creative Commons</option>
+						</select>
+						<textarea></textarea>
+					</div>
+  
+				</form>
+				
 			  
 		  </section>
 		
@@ -334,8 +460,10 @@
 	    <script src='https://localhost:3000/DependencyManager.js'></script>
 		
 		
-		<dataset data-widget="repo-data-source" data-group="repo-data-source"></dataset>	
+		<dataset data-widget="repo-data-source" data-group="repo-data-source" data-server="localhost:3000"></dataset>	
 		<intput type="hidden" data-widget="live-widgets-visualizer" data-group="visualizer" />
+		
+	<dataset data-widget="socket-io-connector" data-host="https://localhost" data-port="3001" data-secure="true"></dataset>
 </body>
 
 </html>

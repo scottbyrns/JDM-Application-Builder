@@ -1,0 +1,9 @@
+{
+    "name": "DOM Extensions Builder",
+    "description": "Utility for building DOM Extensions.",
+    "groupId": "com.scottbyrns.dom",
+    "version": "1.0.0-STUB",
+    "sources": [],
+    "dependencies": [],
+    "configuration": {}
+}

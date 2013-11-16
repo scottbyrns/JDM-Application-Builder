@@ -1,0 +1,10 @@
+{
+    "name": "test",
+    "description": "testing project creation",
+    "groupId": "xxx.test",
+    "projectId": "TestProject",
+    "version": "1.0.0-TEST",
+    "sources": [],
+    "dependencies": [],
+    "configuration": {}
+}

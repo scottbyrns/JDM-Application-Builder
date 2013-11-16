@@ -5,7 +5,7 @@
 	"description": "An application for building JDM (Javascript Dependency Managed) applications.",
 	
 	"tags": [
-
+		
 	],
 	
 	"groupId": "com.scottbyrns.jdm",
@@ -62,7 +62,7 @@
 		{
 		    "groupId": "com.scottbyrns.widgets.jdm.repo",
 		    "artifactId": "DataSource",
-		    "version": "1.0.0-LOCALHOST"
+		    "version": "1.0.1-SNAPSHOT"
 		},
 		{
 		    "groupId": "com.scottbyrns.widgets.events",
@@ -83,13 +83,25 @@
 		    "groupId": "com.scottbyrns.widgets.events",
 		    "artifactId": "DragData",
 		    "version": "1.0.0-SNAPSHOT"
+		},
+		{
+		    "groupId": "com.scottbyrns.widgets",
+		    "artifactId": "TabViewController",
+		    "version": "1.0.0-SNAPSHOT"
+		},
+		{
+		    "groupId": "com.scottbyrns.widgets.form",
+		    "artifactId": "FormInputElement",
+		    "version": "1.0.0-SNAPSHOT"
 		}
+
 
 	],
 	
 	"sources": [
 		"src/widget-builder.js",
-		"src/view-controller.js"
+		"src/create-project.js",
+		"src/jdm-project-builder.js"
 	],
 	
 	"configuration": {

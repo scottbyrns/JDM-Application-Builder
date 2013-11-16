@@ -1,18 +1,23 @@
 {
-	
-	"projects": [
-		
-		{
-			"groupId": "com.scottbyrns.jdm",
-			"projectId": "PackageRepository",
-			"version": "1.0.0-SNAPSHOT"
-		},
-		{
-			"groupId": "com.scottbyrns.widgets",
-			"projectId": "WidgetBuilder",
-			"version": "1.0.0-SNAPSHOT"
-		}
-		
-	]
-	
+    "projects": [
+        {
+            "groupId": "com.scottbyrns.jdm",
+            "projectId": "PackageRepository",
+            "version": "1.0.0-SNAPSHOT"
+        },
+        {
+            "groupId": "com.scottbyrns.widgets",
+            "projectId": "WidgetBuilder",
+            "version": "1.0.0-SNAPSHOT"
+        },
+        {
+            "groupId": "xxx.test",
+            "projectId": "TestProject",
+            "version": "1.0.0-TEST"
+        },
+        {
+            "groupId": "com.scottbyrns.dom",
+            "version": "1.0.0-STUB"
+        }
+    ]
 }
